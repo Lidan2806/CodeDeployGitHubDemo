@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Perpangkatan dan Bentuk Akar</title>
+  <meta name="description" content="My first PWA"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#00897B"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+</head>
+<body>
+
+  <!-- Navigasi -->
+  <nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a href="../pages/daftarmateri.html" class="sidenav-trigger" data-target="nav-mobile">
+            <i class="material-icons">arrow_back</i>
+        </a> 
+        <a href="/" class="">Perkalian pada Perpangkatan</a>
+        <span class="btn-flat right grey-text text-darken-1">
+            <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+        </span>
+    </div>
+  </nav>
+
+  <!-- side nav -->
+  <ul id="side-menu" class="sidenav side-menu">
+      <li><a class="subheader">Perkalian pada Perpangkatan</a></li>
+      <li><a href="/" class="waves-effect">Beranda</a></li>
+      <li><a href="/pages/daftarmateri.html" class="waves-effect">Materi</a></li>
+      <li><a href="/pages/petunjuk.html" class="waves-effect">Petunjuk</a></li>
+      <li><a href="/pages/tujuan.html" class="waves-effect">Tujuan Pembelaran</a></li>
+      <li><a href="/pages/tentang.html" class="waves-effect">Tentang</a></li>
+      
+    </ul>
+  <!-- Akhir Navigasi -->
+
+    <div class="body-content container">
+        <h5>1. Mengalikan Dua Perpangkatan dengan Basis yang Sama</h5>
+            <p>
+                    Untuk mengetahui sifat perkalian dua perpangkatan dengan basis yang sama, simaklah terlebih dahulu operasi  hitung berikut ini:
+            </p>
+        <br>
+        <table class="highlight centered">
+            <thead>
+                <tr>
+                    <th>Operasi Perkalian pada Perpangkatan</th>
+                    <th>Operasi Perkalian</th>
+                    <th>Perpangkatan</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                <td>$3^2 \times 3^3$</td>
+                <td>$(3 \times 3) \times (3 \times 3 \times 3)$</td>
+                <td>$3^2+3 = 3^5$</td>
+                </tr>
+                <tr>
+                <td>$(-2)^2 \times (-2)^2$</td>
+                <td>$((-2) \times (-2)) \times ((-2) \times (-2))$</td>
+                <td>$(-2)^2+2 = (-2)^4$</td>
+                </tr>
+                <tr>
+                <td>$b^1 \times b^2 \times b^2$</td>
+                <td>$(b) \times (b \times b) \times (b \times b)$</td>
+                <td>$b^1+2+2 = b^5$</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+
+
+        <p class="card-panel teal lighten-2 white-text">Lengkapilah contoh berikut ini.</p>
+        <div class="row">
+                <div class="col s4 m2">$3^2 \times 3^2 \times 3^2$ </div>
+                <div class="col s5">$= (3 \times 3) \times (3 \times 3) \times (3 \times 3)$</div>
+              </div>
+        <div class="row">
+                <div class="col s4 m2">$5^2 \times 5^1 \times 5^1$</div>
+                <div class="col s6 m5">$=$ (<input id="a1" placeholder="....." style="width:15px;">$ \times $<input id="a11" placeholder="....." style="width:15px;">)$ \times $(<input id="a111" placeholder="....." style="width:15px;">)$ \times $(<input id="a1111" placeholder="....." style="width:15px;">)</div>
+                <div id="ca"></div>
+            </div>
+        <div class="row">
+                <div class="col s4 m2">$c^1 \times c^4$</div>
+                <div class="col s6 m5">$=$ (<input id="b1" placeholder="....." style="width:15px;">)$ \times $(<input id="b11" placeholder="....." style="width:15px;">$ \times $<input id="b111" placeholder="....." style="width:15px;">$ \times $<input id="b1111" placeholder="....." style="width:15px;">$ \times $<input id="b11111" placeholder="....." style="width:15px;">)</div>
+                <div id="cb"></div>
+            </div>
+
+            <button id="periksa1" class="btn right" onclick="periksa1()">Periksa</button>
+            <br>
+            <br>
+            <hr>
+            <br>
+
+            <!--<p class="card-panel teal lighten-2 white-text">Lengkapilah tabel berikut ini.</p>
+        <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th>Operasi Perkalian pada Perpangkatan</th>
+                        <th>Perpangkatan</th>
+                        <th>Ket.</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>$5^4 x 5^2$</td>
+                        <td>
+                            <p>$5^a x 5^b$</p>
+                            <blockquote>
+                                <p>$a = $<input id="aa1" placeholder="a" style="width:10px;">, b = <input id="bb1" placeholder="b" style="width:10px;"></p>
+                            </blockquote>
+                        </td>
+                        <td id="caa1"> </td>
+                    </tr>
+                    <tr>
+                        <td>$34^3 x 34^2 x 34^3$</td>
+                        <td>
+                            <p>$34^a x 34^b x 34^b$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aa2" placeholder="a" style="width:10px;">, b = <input id="bb2" placeholder="b" style="width:10px;"></p> 
+                            </blockquote>
+                        </td>
+                        <td id="caa2"> </td>
+                    </tr>
+                    <tr>
+                        <td>$c^5 x c^3 x c^2 x c^3$</td>
+                        <td>
+                            <p>$c^a x c^b$</p>
+                            <blockquote>
+                                <p>$a = $<input id="aa3" placeholder="a" style="width:10px;">, b = <input id="bb3" placeholder="b" style="width:10px;">, c = <input id="cc3" placeholder="c" style="width:10px;"></p>
+                            
+                            </blockquote></td>
+                        <td id="caa3"> </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button id="periksa2" class="btn right">Periksa</button>
+            <br>
+            <br>
+            <br>-->
+            
+         <div class="row">
+                <p class="card-panel">Secara umum, operasi perkalian pada perpangkatan memiliki sifat berikut ini:</p>
+                <div class="card-panel center teal lighten-2 white-text">
+                        $a^m \times a^n = a^{m+n} $</div>
+                 
+        </div>
+        <hr>
+
+        <h5>2. Memangkatkan suatu Perpangkatan</h5>
+        <p>Untuk mengetahui sifat pemangkatan suatu perpangkatan, simaklah terlebih dahulu operasi  hitung berikut ini :</p>
+        <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th style="font-size:0.8em">Pemangkatan suatu Perpangkatan</th>
+                        <th>Operasi Perkalian</th>
+                        <th>Perpangkatan</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                    <td>$(4^2)^3$</td>
+                    <td>
+                        <p>$4^2 \times 4^2 \times 4^2$ </p>
+                        <p>$= (4 \times 4) \times (4 \times 4) \times (4 \times 4)$</p>
+                        <p>$= 4 \times 4 \times 4 \times 4 \times 4 \times 4$</p>
+                    </td> 
+                    <td>$4^{2\times3} = 4^6$</td>
+                    </tr>
+                    <tr>
+                    <td>$(4^3)^2$</td>
+                    <td>
+                        <p>$4^3 \times 4^3$</p>
+                        <p>$= (4 \times 4 \times 4) \times (4 \times 4 \times 4)$</p>
+                        <p>$= 4 \times 4 \times 4 \times 4 \times 4 \times 4$</p>
+                    </td>
+                    <td>$4^{3\times2} = 4^6$</td>
+                    </tr>
+                    <tr>
+                    <td>$(s^2)^2$</td>
+                    <td>
+                        <p>$s^2 \times s^2$</p>
+                        <p>$= (s \times s) \times (s \times s)$</p>
+                        <p>$= s \times s \times s \times s$</p>
+                    </td>
+                    <td>$s^{2\times2} = s^4$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <hr>
+
+            <p class="card-panel teal lighten-2 white-text">Lengkapilah contoh berikut ini.</p>
+            <div class="row">
+                    <div class="col s3">$(9^{5})^{5}$</div>
+                    <div class="col s2">$= 9^{a}$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s1"> $a = 5 \times 5$</div>
+                  </div>
+            <div class="row">
+                    <div class="col s3"></div>
+                    <div class="col s2">$=9^{25}$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_back</i></div>
+                    <div class="col s1">$a = 25$</div>
+                  </div>
+
+
+            <div class="row">
+                    <div class="col s3">$(2^{2})^{12}$</div>
+                    <div class="col s2">$= 2^{a}$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s4 m2"> $a = $<input id="aa1" placeholder="...." style="width:20px;"> $\times$ <input id="aa11" placeholder="...." style="width:20px;"></div>
+                    <div class="col s1" id="caa"></div>
+                  </div>
+            <div class="row">
+                    <div class="col s3"></div>
+                    <div class="col s2" id="per1" >$=2^{a}$</div> <!--onclick="pers2()"-->
+                    <div class="col s1"><i class="tiny material-icons">arrow_back</i></div>
+                    <div class="col s4 m2">$a = $<input id="aa2" placeholder="...." style="width:20px;"></div>
+                    <div class="col s1" id="caa2"></div>
+                  </div>
+
+
+            <div class="row">
+                    <div class="col s3">$(s^3)^4$</div>
+                    <div class="col s2">$= s^{a}$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s4 m2"> $a = $<input id="bb1" placeholder="...." style="width:20px;"> $\times$ <input id="bb11" placeholder="...." style="width:20px;"></div>
+                    <div class="col s1" id="cbb"></div>  
+                </div>
+            <div class="row">
+                    <div class="col s3"></div>
+                    <div class="col s2" id="per2"></div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_back</i></div>
+                    <div class="col s4 m2">$a = $<input id="bb2" placeholder="...." style="width:20px;"></div>
+                    <div class="col s1" id="cbb2"></div>  
+                </div>
+
+                <button id="periksa2" class="btn right" onclick="periksa2()">Periksa</button>
+                <br>
+                <br>
+                <hr>
+                <br> 
+
+
+        <!--<p class="card-panel teal lighten-2 white-text">Lengkapilah tabel berikut ini.</p>
+        <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th>Pemangkatan suatu Perpangkatan</th>
+                        <th>Perpangkatan</th>
+                        <th>Ket.</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>$(9^5)^5$</td>
+                        <td>
+                            <p>$9^axb = 9^c$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaa1" placeholder="a" style="width:10px;">, b = <input id="bbb1" placeholder="b" style="width:10px;">, c = <input id="ccc1" placeholder="c" style="width:10px;"></p>
+                           </blockquote>
+                        </td>
+                        <td id="caaa1"> </td>
+                    </tr>
+                    <tr>
+                        <td>$(28^2)^12$</td>
+                        <td>
+                            <p>$28^axb = 28^c$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaa2" placeholder="a" style="width:20px;">, b = <input id="bbb2" placeholder="b" style="width:10px;">, c = <input id="ccc2" placeholder="c" style="width:20px;"></p>
+                            </blockquote>
+                        </td>
+                            <td id="caaa2"> </td>
+                    </tr>
+                    <tr>
+                        <td>$(s^3)^4$</td>
+                        <td>
+                            <p>$s^axb = s^c$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaa3" placeholder="a" style="width:10px;">, b = <input id="bbb3" placeholder="b" style="width:10px;">, c = <input id="ccc3" placeholder="c" style="width:20px;"></p>
+                            </blockquote>
+                        </td>
+                        <td id="caaa3"> </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button id="periksa3" class="btn right">Periksa</button>
+            <br>
+            <br>
+            <hr>
+            <br>-->
+
+
+            <div class="row">
+                        <p class="card-panel">Secara umum, pemangkatan suatu perpangkatan memiliki sifat berikut ini:</p>
+                    <p class="card-panel teal lighten-2 white-text center"> $(a^m)^n=(a^n)^m=a^{m \times n}$ </p>
+                         
+                </div>  
+            <hr>
+
+
+
+            <h5>3. Memangkatkan suatu Perkalian Bilangan</h5>
+        <p>Untuk mengetahui sifat pemangkatan suatu perkalian bilangan, simaklah terlebih dahulu operasi hitung berikut ini:</p>
+        <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th style="font-size:0.8em">Pemangkatan suatu Perkalian Bilangan</th>
+                        <th>Operasi Perkalian</th>
+                        <th>Perpangkatan</th>
+                    </tr>
+                </thead>                
+                <tbody>
+                    <tr>
+                    <td>$(2 \times 3)^3$</td>
+                    <td>
+                        <p>$(2 \times 3) \times (2 \times 3) \times (2 \times 3)$</p>
+                        <p>$= 2 \times 3 \times 2 \times 3 \times 2 \times 3$</p>
+                        <p>$= 2 \times 2 \times 2 \times 3 \times 3 \times 3$</p>
+                        <p>$= (2 \times 2 \times 2) \times (3 \times 3 \times 3)$</p>
+                    </td> 
+                    <td>$2^3 \times 3^3$</td>
+                    </tr>
+                    <tr>
+                    <td>$(5 \times 4)^2$</td>
+                    <td>
+                        <p>$(5 \times 4) \times (5 \times 4)$</p>
+                        <p>$= 5 \times 4 \times 5 \times 4$</p>
+                        <p>$= 5 \times 5 \times 4 \times 4$</p>
+                        <p>$= (5 \times 5) \times (4 \times 4)$</p>
+                    </td>
+                    <td>$5^2 \times 4^2$</td>
+                    </tr>
+                    <tr>
+                    <td>$(b \times c)^3$</td>
+                    <td>
+                        <p>$(b \times c) \times (b \times c) \times (b \times c)$</p>
+                        <p>$= b \times c \times b \times c \times b \times c$</p>
+                        <p>$= b \times b \times b \times c \times c \times c$</p>
+                        <p>$= (b \times b \times b) \times (c \times c \times c)$</p>
+                    </td>
+                    <td>$b^3 \times c^3$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            
+
+            <p class="card-panel teal lighten-2 white-text">Lengkapilah contoh berikut ini.</p>
+            <div class="row">
+                    <div class="col s5 m3">$4 \times 4 \times 3 \times 3$</div>
+                    <div class="col s4 m2">$= (4 \times 3)^a$</div>
+                    <!--<div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s1"> $a = 3$</div>-->
+                  </div>
+            <div class="row">
+                    <div class="col s5 m3"></div>
+                    <div class="col s3 m2">$= 4^a \times 3^a$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s1">$a = 2$</div>
+                  </div>
+
+
+            <div class="row">
+                    <div class="col s5 m3">$2 \times 5 \times 2 \times 5$</div>
+                    <div class="col s4 m2">$=(2 \times 5)^a$</div>
+                    <div id="cc1"></div>
+                    <!--<div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3"> $a = $<input id="aaaa1" placeholder="....." style="width:15px;"></div>-->
+                  </div>
+            <div class="row">
+                    <div class="col s5 m3"></div>
+                    <div class="col s3 m2">$=2^a \times 5^a$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3">$a = $<input id="aaaa11" placeholder="....." style="width:15px;"></div>
+                  </div>
+
+            <div class="row">
+                    <div class="col s6 m3">$s \times t \times s \times t \times s \times t$</div>
+                    <div class="col s4 m2">$=(s \times t)^a$</div>
+                    <div id="cc3"></div>
+                    <!--<div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3"> $a = $<input id="aaaa3" placeholder="..." style="width:15px;"></div>-->
+                  </div>
+            <div class="row">
+                    <div class="col s5 m3"></div>
+                    <div class="col s3 m2">$=s^a \times t^a$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3">$a = $<input id="aaaa33" placeholder="....." style="width:15px;"></div>
+                  </div>
+
+            <div class="row">
+                    <div class="col s6 m3">$ 8 \times 7 \times 7 \times 8 \times 8 \times 7$</div>
+                    <div class="col s4 m2">$=(7 \times 8)^a$</div>
+                    <div id="cc4"></div>
+                    <!--<div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3"> $a = $<input id="aaaa4" placeholder="..." style="width:15px;"></div>-->
+                  </div>
+            <div class="row">
+                    <div class="col s5 m3"></div>
+                    <div class="col s3 m2">$=7^a \times 8^a$</div>
+                    <div class="col s1"><i class="tiny material-icons">arrow_forward</i></div>
+                    <div class="col s3">$a = $<input id="aaaa44" placeholder="....." style="width:15px;"></div>
+                  </div>
+
+                <button id="periksa3" class="btn right" onclick="periksa3()">Periksa</button>
+                <br>
+                <br>
+                <hr>
+                <br>
+        <!--<p class="card-panel teal lighten-2 white-text">Lengkapilah tabel berikut ini.</p>
+        <table class="highlight centered">
+                <thead>
+                    <tr>
+                        <th>Operasi Perkalian</th>
+                        <th>Pemangkatan suatu Perkalian Bilangan</th>
+                        <th>Perpangkatan</th>
+                        <th>Ket.</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr>
+                        <td>$4 \times 4 \times 4 \times 3 \times 3 \times 3$</td>
+                        <td>
+                            <p>$(4 \times 3)^a$</p>
+                            <blockquote>
+                                <p>$a = $<input id="aaaa1" placeholder="a" style="width:10px;"></p> </td>
+                           </blockquote>
+                        </td>
+                        <td>
+                            <p>$4^a \times 3^b$</p>
+                            <blockquote>
+                                <p>$a = $<input id="aaaa11" placeholder="a" style="width:10px;"></p>, b = <input id="bbbb11" placeholder="a" style="width:10px;"></p> </td>
+                            </blockquote>
+                        </td>
+                        <td id="caaaa1"> </td>
+                    </tr>
+                    <tr>
+                        <td>$(2 \times 5) \times (2 \times 5)$</td>
+                        <td>
+                            <p>$(2 \times 5)^a$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaaa2" placeholder="a" style="width:20px;"></p> 
+                            </blockquote>
+                        </td>
+                        <td>
+                                <p>$2^a \times 5^b$</p>
+                                <blockquote>
+                                    <p>$a = $<input id="aaaa22" placeholder="a" style="width:10px;"></p>, b = <input id="bbbb22" placeholder="b" style="width:10px;"></p> </td>
+                                </blockquote>
+                        </td>
+                        <td id="caaaa2"> </td>
+                    </tr>
+                    <tr>
+                        <td>$(s \times t \times e) \times (s \times t \times e)$</td>
+                        <td>
+                            <p>$(s \times t \times e)^a$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaaa3" placeholder="a" style="width:10px;"></p>
+                            </blockquote>
+                        </td>
+                        <td>
+                                <p>$s^a \times t^b \times e^c$</p>
+                                <blockquote>
+                                    <p>$a = $<input id="aaaa33" placeholder="a" style="width:10px;"></p>, b = <input id="bbbb33" placeholder="b" style="width:10px;"></p>, c = <input id="cccc33" placeholder="c" style="width:10px;"></p> </td>
+                                </blockquote>
+                        </td>
+                        <td id="caaaa3"> </td>
+                    </tr>
+                    <tr>
+                        <td>$7 \times 8 \times 8 \times 7 \times 7 \times 8$</td>
+                        <td>
+                            <p>$(7 \times 8)^a$</p>
+                            <blockquote>
+                            <p>$a = $<input id="aaaa4" placeholder="a" style="width:10px;"></p>
+                            </blockquote>
+                        </td>
+                        <td>
+                                <p>$7^a \times 8^b$</p>
+                                <blockquote>
+                                    <p>$a = $<input id="aaaa44" placeholder="a" style="width:10px;"></p>, b = <input id="bbbb44" placeholder="b" style="width:10px;"></p> </td>
+                                </blockquote>
+                        </td>
+                        <td id="caaaa4"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <button id="periksa4" class="btn right">Periksa</button>
+            <br>
+            <br>
+            <hr>
+            <br>-->
+             
+            
+            
+
+
+
+            <!--<p class="card-panel teal lighten-2 white-text">Lengkapilah tabel berikut ini.</p>
+            <table class="highlight centered">
+                    <thead>
+                        <tr>
+                            <th>Pemangkatan suatu Perkalian Bilangan</th>
+                            <th>Perpangkatan</th>
+                            <th>Ket.</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        <tr>
+                            <td>$(9 x 9)^5$</td>
+                            <td>
+                                <p>$(9^a)^b = 9^c$</p>
+                                <blockquote>
+                                    <p>$a = $<input id="aaaaa1" placeholder="a" style="width:10px;"></p>, b = <input id="bbbbb1" placeholder="b" style="width:10px;"></p>, c = <input id="ccccc1" placeholder="c" style="width:20px;"></p> </td>
+                                </blockquote>
+                            </td>
+                            <td id="caaaaa1"> </td>
+                        </tr>
+                        <tr>
+                            <td>$(12 x 23)^2$</td>
+                            <td>
+                                    <p>$12^a x 23^b$</p>
+                                    <blockquote>
+                                        <p>$a = $<input id="aaaaa2" placeholder="a" style="width:10px;"></p>, b = <input id="bbbbb2" placeholder="b" style="width:10px;">, c = <input id="ccccc2" placeholder="c" style="width:20px;"></p> </td>
+                                    </blockquote>
+                            </td>
+                            <td id="caaaaa2"> </td>
+                        </tr>
+                        <tr>
+                            <td>$(4^2 x 4^2) = 4^4$</td>
+                            <td>
+                                    <p>$(4^a)^b = 4^c$</p>
+                                    <blockquote>
+                                        <p>$a = $<input id="aaaaa3" placeholder="a" style="width:10px;"></p>, b = <input id="bbbbb3" placeholder="b" style="width:10px;"></p>, c = <input id="ccccc3" placeholder="c" style="width:10px;"></p> </td>
+                                    </blockquote>
+                            </td>
+                            <td id="caaaaa3"> </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+                <button id="periksa5" class="btn right">Periksa</button>
+                <br>
+                <br>
+                <hr>-->
+
+                <br>   
+                <div class="row">
+                        <p class="card-panel">Secara umum, pemangkatan suatu perpangkatan memiliki sifat berikut ini:</p>
+                    <p class="card-panel teal lighten-2 white-text center"> $(a \times b)^m = a^m \times b^m$ </p>
+                         
+                </div>  
+            <hr>
+
+
+
+        <div style="padding:70px 0;">
+            <a class="btn left" href="../pages/daftarmateri.html">Kembali</a>
+            <a class="btn right" href="./contoh2.html">Selanjutnya</a>
+            </div>
+            
+    </div>
+
+  </div>
+
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/nav.js"></script>
+  <!--<script src="js/script.js"></script>
+  <script src="js/api.js"></script>-->
+  <script>
+  // REGISTER SERVICE WORKER
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/service-worker.js')
+      .then(function() {
+        console.log('Pendaftaran ServiceWorker berhasil');
+      })
+      .catch(function(){
+        console.log('Pendaftaran ServiceWorker gagal');
+      });
+    })
+  } else {
+    console.log("ServiceWorker belum didukung browser ini.")
+  }
+
+
+  
+  //document.addEventListener("DOMContentLoaded", function() {
+      //  getArticles();
+    //});
+
+  </script>
+
+
+<script>
+    var aa2 = document.getElementById("aa2").value;
+    if (aa2 == ""){
+        document.getElementById("per1").innerHTML = "$$" + "= 2^a" + "$$";
+    }
+    if (aa2 !== ""){
+        document.getElementById("per1").innerHTML = "$$" + "= 2^" + aa2 + "$$";
+    }
+
+    var bb2 = document.getElementById("bb2").value;
+    if (aa2 == ""){
+        document.getElementById("per2").innerHTML = "$$" + "= s^a" + "$$";
+    }
+    if (aa2 !== ""){
+        document.getElementById("per2").innerHTML = "$$" + "= s^" + bb2 + "$$";
+    }
+
+    function periksa1(){
+        var a1 = document.getElementById("a1").value;
+        var a11 = document.getElementById("a11").value;
+        var a111 = document.getElementById("a111").value;
+        var a1111 = document.getElementById("a1111").value;
+            if (a1,a11,a111,a1111 == 5){
+                document.getElementById("ca").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("ca").innerHTML = "salah";
+            }
+        var b1 = document.getElementById("b1").value;
+        var b11 = document.getElementById("b11").value;
+        var b111 = document.getElementById("b111").value;
+        var b1111 = document.getElementById("b1111").value;
+        var b11111 = document.getElementById("b11111").value;
+            if (b1,b11,b111,b1111,b11111 == "c"){
+                document.getElementById("cb").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cb").innerHTML = "salah";
+            }
+    }
+    function periksa2(){  
+        var aa1 = document.getElementById("aa1").value;
+        var aa11 = document.getElementById("aa11").value;
+            if (aa1 == 2 && aa11 == 12){
+                document.getElementById("caa").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("caa").innerHTML = "salah";
+            }
+        var aa2 = document.getElementById("aa2").value;
+            if (aa2 == 24){
+                document.getElementById("caa2").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("caa2").innerHTML = "salah";
+            }
+
+
+        var bb1 = document.getElementById("bb1").value;
+        var bb11 = document.getElementById("bb11").value;
+            if (bb1 == 3 && bb11 == 4){
+                document.getElementById("cbb").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cbb").innerHTML = "salah";
+            }
+        var bb2 = document.getElementById("bb2").value;
+            if (bb2 == 12){
+                document.getElementById("cbb2").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cbb2").innerHTML = "salah";
+            }
+        }
+        function periksa3(){
+            var aaaa11 = document.getElementById("aaaa11").value;
+            if (aaaa11 == 2){
+                document.getElementById("cc1").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cc1").innerHTML = "salah";
+            }
+
+
+            var aaaa33 = document.getElementById("aaaa33").value;
+            if (aaaa33 == 3){
+                document.getElementById("cc3").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cc3").innerHTML = "salah";
+            }
+
+
+            var aaaa44 = document.getElementById("aaaa44").value;
+            if (aaaa44 == 3){
+                document.getElementById("cc4").innerHTML = "benar";
+            }
+            else{
+                document.getElementById("cc4").innerHTML = "salah";
+            }
+    }
+
+</script>
+</body>
+</html>
